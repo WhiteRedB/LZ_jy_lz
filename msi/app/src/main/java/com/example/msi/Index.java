@@ -34,6 +34,9 @@ public class Index extends AppCompatActivity implements View.OnClickListener {
         //goto_login
         Button goto_login = (Button)findViewById(R.id.goto_login);
         goto_login.setOnClickListener(this);
+
+        Button goto_db=(Button)findViewById(R.id.goto_db);
+        goto_db.setOnClickListener(this);
     }
     /**
      * 接口实现方法，点击以后写具体的逻辑
@@ -46,6 +49,8 @@ public class Index extends AppCompatActivity implements View.OnClickListener {
                 //跳转到登录界面
                 Intent i = new Intent(Index.this,Login.class);
                 startActivity(i);
+                Intent b = new Intent(Index.this,OptionsDatabase.class);
+                startActivity(b);
                 break;
             case R.id.get_data:
                 SharedPreferences pref = getSharedPreferences("data1",MODE_PRIVATE);
